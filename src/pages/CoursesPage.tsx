@@ -72,8 +72,10 @@ function CoursesPage() {
                     {course.details}
                   </p>
 
-                  <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-blue-100 px-5 py-2.5 rounded-lg border border-blue-200 transition-elegant group-hover:scale-105 group-hover:shadow-md animate-fade-in" style={{ animationDelay: `${index * 0.15 + 0.2}s`, opacity: 0 }}>
-                    <p className="text-blue-700 font-bold text-lg">{course.price}</p>
+                  <div className="flex justify-center w-full mb-6">
+                    <div className="inline-flex items-center justify-center bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-3 rounded-lg border border-blue-200 transition-elegant group-hover:scale-105 group-hover:shadow-md group-hover:from-blue-100 group-hover:to-blue-50 animate-fade-in min-w-[160px]" style={{ animationDelay: `${index * 0.15 + 0.2}s`, opacity: 0 }}>
+                      <p className="text-blue-700 font-bold text-lg">{course.price}</p>
+                    </div>
                   </div>
                 </div>
 
