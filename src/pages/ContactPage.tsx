@@ -48,13 +48,13 @@ function ContactPage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex flex-col items-center p-8 bg-white rounded-xl border border-gray-200 ${link.hoverBgColor} transition-elegant hover:shadow-xl hover:-translate-y-2 animate-fade-in-up group`}
+                className={`flex flex-col items-center p-8 bg-white rounded-xl border-2 border-gray-200 hover:border-${link.color.split('-')[1]}-300 transition-elegant hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] animate-fade-in-up group`}
                 style={{ animationDelay: `${0.2 + index * 0.1}s`, opacity: 0 }}
               >
-                <div className={`w-16 h-16 ${link.bgColor} rounded-xl flex items-center justify-center mb-4 transition-elegant group-hover:scale-110`}>
-                  <link.icon className={`w-8 h-8 ${link.color}`} />
+                <div className={`w-16 h-16 ${link.bgColor} rounded-xl flex items-center justify-center mb-4 transition-elegant group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-md`}>
+                  <link.icon className={`w-8 h-8 ${link.color} transition-elegant group-hover:scale-110`} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className={`text-lg font-semibold text-gray-900 transition-elegant group-hover:${link.color}`}>
                   {link.name}
                 </h3>
               </a>
@@ -62,8 +62,8 @@ function ContactPage() {
           </div>
 
           <div className="mt-12 text-center animate-fade-in" style={{ animationDelay: '0.6s', opacity: 0 }}>
-            <div className="inline-block bg-white rounded-xl px-8 py-6 border border-gray-200 shadow-sm transition-elegant hover:shadow-md">
-              <p className="text-gray-600">
+            <div className="inline-block bg-white rounded-xl px-8 py-6 border border-gray-200 shadow-sm transition-elegant hover:shadow-md hover:scale-[1.02] cursor-default">
+              <p className="text-gray-600 transition-elegant">
                 We're here to help you succeed in your Digital SAT Math journey!
               </p>
             </div>

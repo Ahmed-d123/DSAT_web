@@ -26,26 +26,26 @@ function HomePage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight animate-fade-in-up" style={{ opacity: 0 }}>
                 Start Your Journey to Master Digital SAT Math
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.1s', opacity: 0 }}>
                 A comprehensive online course for mastering the DSAT Math section, taught by
                 <span className="font-semibold text-gray-900"> Mr. Mohamed Aliaa</span>. Build strong math
                 fundamentals and practice the new SAT digital format from anywhere, at your own pace.
               </p>
 
-              <div>
+              <div className="animate-fade-in-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
                 <a
                   href="https://dsat-math.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg hover:bg-blue-600 transition-elegant shadow-md hover:shadow-xl hover:scale-105 transform"
+                  className="inline-flex items-center px-8 py-4 bg-blue-500 text-white text-lg font-semibold rounded-lg hover:bg-blue-600 transition-elegant shadow-md hover:shadow-xl hover:scale-[1.05] transform active:scale-[0.98] group"
                 >
                   Start Now
                   <svg
-                    className="ml-2 w-5 h-5"
+                    className="ml-2 w-5 h-5 transition-elegant group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -56,8 +56,8 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="relative animate-fade-in-up lg:block hidden" style={{ animationDelay: '0.2s', opacity: 0 }}>
-              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 transition-elegant hover:shadow-xl">
+            <div className="relative animate-fade-in-up lg:block hidden" style={{ animationDelay: '0.3s', opacity: 0 }}>
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 transition-elegant hover:shadow-xl hover:scale-[1.02] group">
                 <div className="aspect-square rounded-xl flex items-center justify-center overflow-hidden p-8">
                   <img
                     src="/images/logo.jpg"
@@ -73,7 +73,7 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white rounded-xl p-6 shadow-xl max-w-xs hidden md:block transition-elegant hover:scale-105 hover:shadow-2xl animate-fade-in" style={{ animationDelay: '0.4s', opacity: 0 }}>
+              <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white rounded-xl p-6 shadow-xl max-w-xs hidden md:block transition-elegant hover:scale-105 hover:shadow-2xl animate-fade-in cursor-default" style={{ animationDelay: '0.5s', opacity: 0 }}>
                 <p className="font-semibold mb-1">Interactive Learning</p>
                 <p className="text-sm text-blue-100">Practice with real SAT-style problems</p>
               </div>
@@ -101,14 +101,14 @@ function HomePage() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-elegant hover:-translate-y-1 animate-fade-in-up group"
+                className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-elegant hover:-translate-y-2 hover:border-blue-200 animate-fade-in-up group cursor-default"
                 style={{ animationDelay: `${0.6 + index * 0.1}s`, opacity: 0 }}
               >
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 transition-elegant group-hover:bg-blue-100 group-hover:scale-110">
-                  <feature.icon className="w-6 h-6 text-blue-500" />
+                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 transition-elegant group-hover:bg-blue-100 group-hover:scale-110 group-hover:rotate-3">
+                  <feature.icon className="w-6 h-6 text-blue-500 transition-elegant" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 transition-elegant group-hover:text-blue-600">{feature.title}</h3>
+                <p className="text-gray-600 transition-elegant">{feature.description}</p>
               </div>
             ))}
           </div>
