@@ -38,7 +38,7 @@ function Navigation() {
             <img
               src="/images/logo.jpg"
               alt="Digital SAT Math"
-              className="h-14 w-auto rounded-lg transition-elegant hover:scale-105"
+              className="h-12 w-auto object-contain transition-elegant hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 const textLogo = e.currentTarget.nextElementSibling;

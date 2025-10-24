@@ -5,6 +5,25 @@ function HomePage() {
     <div className="min-h-screen">
       <section className="relative min-h-screen flex items-center justify-center bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="lg:hidden mb-12 flex justify-center animate-scale-in" style={{ opacity: 0 }}>
+            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 w-full max-w-sm">
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/images/logo.jpg"
+                  alt="Digital SAT Math"
+                  className="max-w-full h-auto object-contain rounded-lg transition-elegant hover:scale-105"
+                  style={{ maxHeight: '200px' }}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallback = e.currentTarget.nextElementSibling;
+                    if (fallback) (fallback as HTMLElement).style.display = 'flex';
+                  }}
+                />
+                <Calculator className="hidden w-24 h-24 text-blue-500" strokeWidth={1.5} />
+              </div>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -39,11 +58,11 @@ function HomePage() {
 
             <div className="relative animate-fade-in-up lg:block hidden" style={{ animationDelay: '0.2s', opacity: 0 }}>
               <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 transition-elegant hover:shadow-xl">
-                <div className="aspect-square bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center overflow-hidden p-4">
+                <div className="aspect-square rounded-xl flex items-center justify-center overflow-hidden p-8">
                   <img
                     src="/images/logo.jpg"
                     alt="Digital SAT Math"
-                    className="max-w-full max-h-full object-contain transition-elegant hover:scale-105"
+                    className="max-w-full max-h-full object-contain transition-elegant hover:scale-105 rounded-lg"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                       const fallback = e.currentTarget.nextElementSibling;
