@@ -37,11 +37,11 @@ function CoursesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 border-2 shadow-md hover:shadow-2xl transition-elegant hover:-translate-y-2 animate-fade-in-up group relative overflow-hidden"
+                className="bg-white rounded-2xl border-2 shadow-md hover:shadow-2xl transition-elegant hover:-translate-y-2 animate-fade-in-up group relative overflow-hidden flex flex-col"
                 style={{
                   animationDelay: `${index * 0.15}s`,
                   opacity: 0,
@@ -49,36 +49,42 @@ function CoursesPage() {
                 }}
               >
                 {course.recommended && (
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-bl-xl flex items-center gap-1.5 shadow-md">
-                    <Star className="w-4 h-4 fill-current" />
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-bl-xl flex items-center gap-1.5 shadow-md animate-slide-in z-10" style={{ animationDelay: `${index * 0.15 + 0.3}s`, opacity: 0 }}>
+                    <Star className="w-4 h-4 fill-current animate-pulse" />
                     <span className="text-sm font-semibold">Recommended</span>
                   </div>
                 )}
 
-                <div className="mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center mb-4 transition-elegant group-hover:from-blue-100 group-hover:to-blue-200 group-hover:scale-110 group-hover:rotate-3">
-                    <course.icon className="w-8 h-8 text-blue-600 transition-elegant" />
+                <div className="p-8 pb-6 flex-grow flex flex-col">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center mb-5 transition-elegant group-hover:from-blue-100 group-hover:to-blue-200 group-hover:scale-110 group-hover:rotate-3">
+                      <course.icon className="w-8 h-8 text-blue-600 transition-elegant" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3 transition-elegant group-hover:text-blue-600">
+                      {course.title}
+                    </h2>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-3 transition-elegant group-hover:text-blue-600">
-                    {course.title}
-                  </h2>
+
                   <p className="text-gray-600 leading-relaxed mb-3 text-base">
                     {course.description}
                   </p>
-                  <p className="text-gray-700 leading-relaxed mb-6 text-sm">
+                  <p className="text-gray-700 leading-relaxed mb-6 text-sm flex-grow">
                     {course.details}
                   </p>
-                  <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-blue-100 px-5 py-2.5 rounded-lg border border-blue-200">
+
+                  <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-blue-100 px-5 py-2.5 rounded-lg border border-blue-200 transition-elegant group-hover:scale-105 group-hover:shadow-md animate-fade-in" style={{ animationDelay: `${index * 0.15 + 0.2}s`, opacity: 0 }}>
                     <p className="text-blue-700 font-bold text-lg">{course.price}</p>
                   </div>
                 </div>
 
-                <button
-                  onClick={course.buttonAction}
-                  className="w-full px-6 py-3.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-elegant shadow-md hover:shadow-xl hover:scale-[1.02] transform active:scale-[0.98]"
-                >
-                  {course.buttonText}
-                </button>
+                <div className="p-8 pt-0">
+                  <button
+                    onClick={course.buttonAction}
+                    className="w-full px-6 py-3.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-elegant shadow-md hover:shadow-xl hover:scale-[1.02] transform active:scale-[0.98]"
+                  >
+                    {course.buttonText}
+                  </button>
+                </div>
               </div>
             ))}
           </div>
